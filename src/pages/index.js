@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -17,7 +18,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<p className="text-red-300">tes</p>
+			<Header />
 		</div>
 	);
 }
