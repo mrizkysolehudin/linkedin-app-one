@@ -1,10 +1,9 @@
 import Header from "@/components/Header";
 import Head from "next/head";
-import Image from "next/image";
 
 export default function Home() {
 	return (
-		<div>
+		<div className="min-h-screen bg-[#F3F2EF] dark:bg-black">
 			<Head>
 				<title>LinkedIn App</title>
 				<meta

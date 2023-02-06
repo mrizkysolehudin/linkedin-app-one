@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import HeaderItem from "./HeaderItem";
 import GroupIcon from "@mui/icons-material/Group";
@@ -9,22 +9,48 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { Avatar } from "@mui/material";
+import { useTheme } from "next-themes";
 
 const Header = () => {
+	const [mounted, setMounted] = useState(false);
+	const { resolvedTheme, setTheme } = useTheme();
+
+	// After mounting, we have access to the theme
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
 	return (
-		<header className="fixed left-0 top-0 w-full bg-white py-1">
+		<header className="fixed left-0 top-0 w-full bg-white py-1 dark:bg-[#1D2226]">
 			<div className="mx-auto flex max-w-6xl justify-between px-9">
 				<section className="relative flex w-2/12 items-center gap-x-6 ">
-					<Image
-						src="https://rb.gy/dpmd9s"
-						alt="logo"
-						width={45}
-						height={45}
-					/>
+					{mounted && (
+						<>
+							{resolvedTheme === "dark" ? (
+								<Image
+									src="https://rb.gy/bizvqj"
+									alt="logo"
+									width={45}
+									height={45}
+									priority
+								/>
+							) : (
+								<Image
+									src="https://rb.gy/dpmd9s"
+									alt="logo"
+									width={45}
+									height={45}
+								/>
+							)}
+						</>
+					)}
 
 					<div className="flex items-center ">
 						<SearchRoundedIcon />
-						<p className="ml-1 text-sm text-gray-500">Search</p>
+						<input
+							placeholder="Search..."
+							className="ml-1 h-8 rounded-xl border border-black px-3 text-sm text-gray-500 dark:border-white dark:text-white"
+						/>
 					</div>
 				</section>
 
@@ -40,12 +66,22 @@ const Header = () => {
 					<HeaderItem Icon={Avatar} title="Me" />
 					<HeaderItem Icon={AppsOutlinedIcon} title="Work" />
 
-					<button className="relative flex w-12 items-center rounded-xl bg-gray-500">
-						<span>🌜</span>
+					<button
+						onClick={() =>
+							setTheme(
+								resolvedTheme === "dark" ? "light" : "dark"
+							)
+						}
+						className={`relative flex w-14 items-center rounded-2xl bg-gray-500 py-1 px-1 ${
+							resolvedTheme === "dark"
+								? "justify-end"
+								: "justify-start"
+						}`}>
+						<span className="absolute left-0">🌜</span>
 
-						<div className="absolute left-0.5 z-20 h-5 w-5 rounded-full bg-white"></div>
+						<div className=" z-20 h-5 w-5 rounded-full bg-white"></div>
 
-						<span className="absolute right-0">🌞</span>
+						<span className="absolute right-0.5">🌞</span>
 					</button>
 				</section>
 			</div>
