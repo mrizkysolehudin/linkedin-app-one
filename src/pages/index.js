@@ -1,3 +1,4 @@
+import Feed from "@/components/Feed";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import Head from "next/head";
@@ -22,8 +23,7 @@ export default function Home() {
 
 			<main className="mx-auto mt-24 flex min-h-screen max-w-6xl gap-x-6 pl-4">
 				<SideBar />
-
-				<div className="h-screen w-[44%] bg-blue-300"></div>
+				<Feed />
 				<div className="h-screen w-[29%] bg-red-300"></div>
 			</main>
 		</div>
