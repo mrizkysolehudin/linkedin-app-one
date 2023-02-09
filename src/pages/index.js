@@ -21,7 +21,7 @@ export default function Home() {
 
 			<Header />
 
-			<main className="mx-auto mt-24 flex min-h-screen max-w-6xl gap-x-6 pl-4">
+			<main className="mx-auto flex min-h-screen max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
 				<SideBar />
 				<Feed />
 				<div className="h-screen w-[29%] bg-red-300"></div>

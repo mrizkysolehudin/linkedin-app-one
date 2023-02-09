@@ -6,7 +6,7 @@ import React from "react";
 const SideBar = () => {
 	return (
 		<div className="w-[19%]">
-			<article className="overflow-hidden rounded-lg border border-gray-300 bg-white">
+			<article className="overflow-hidden rounded-lg border border-gray-300 bg-white dark:border-none dark:bg-[#1D2226]">
 				<section className="relative left-0 top-0  z-10 flex h-14 w-full justify-center">
 					<Image
 						src="https://rb.gy/i26zak"
@@ -19,59 +19,72 @@ const SideBar = () => {
 						alt="Remy Sharp"
 						src="/static/images/avatar/1.jpg"
 						sx={{ width: 56, height: 56 }}
-						className="top-5 border-[1.5px] border-gray-200 bg-orange-500"
+						className="top-5 border-[1.5px] border-gray-200 bg-orange-500 hover:cursor-pointer"
 					/>
 				</section>
 
 				<section className="mt-10 text-center">
-					<p className="font-medium hover:underline hover:decoration-blue-500">
+					<p className="font-medium hover:cursor-pointer hover:underline hover:decoration-blue-500 dark:font-normal dark:text-white/90">
 						Muchammad Rizky
 					</p>
-					<p className="text-sm text-gray-500">
+					<p className="text-sm text-gray-500 dark:text-white/70">
 						mrizkysolehudin11@gmail.com
 					</p>
 				</section>
 
-				<section className="mx-3 mt-7 text-sm font-semibold text-gray-800">
-					<div className="  flex justify-between ">
-						<p>Who viewed your profile</p>
-						<span className="text-blue-500">221</span>
+				<section
+					className="mx-3 mt-7 text-sm font-semibold text-gray-800 dark:opacity-70 dark:hover:opacity-90
+">
+					<div className="  flex justify-between  ">
+						<p className="dark:text-white ">
+							Who viewed your profile
+						</p>
+						<p className="text-blue-500">221</p>
 					</div>
 
-					<div className="flex justify-between ">
-						<p>Views of your post</p>
-						<span className="text-blue-500">1,232</span>
+					<div className="flex justify-between  ">
+						<p className="dark:text-white">Views of your post</p>
+						<p className="text-blue-500">1,232</p>
 					</div>
 				</section>
 
-				<section className="mx-3 mt-6 opacity-90 hover:opacity-100">
+				<section className="mx-3 mt-6 opacity-70 hover:opacity-90">
 					<p className="text-xs ">
 						Access exclusive tools & insights
 					</p>
-					<p className="relative flex items-center gap-x-2 text-sm font-semibold">
+					<div className="relative flex items-center gap-x-2 text-sm font-semibold">
 						<div className="top-0 left-0 h-3 w-3 rounded-sm bg-gradient-to-tr from-yellow-700 to-yellow-300"></div>{" "}
 						<p>Try Premium for free</p>
-					</p>
+					</div>
 				</section>
 
-				<section className="ml-2 mt-6 mb-3 flex gap-x-1 text-sm font-semibold opacity-90 hover:opacity-100">
-					<Bookmark />
+				<section className="ml-2 mt-6 mb-3 flex gap-x-1 text-sm font-semibold opacity-70 hover:opacity-90">
+					<div>
+						<Bookmark />
+					</div>
 					<p>My items</p>
 				</section>
 			</article>
 
-			<article className="mt-2 rounded-md border border-gray-300 bg-white px-2 py-2  font-semibold text-blue-500">
-				<div className="grid gap-y-2 text-sm">
-					<p>Groups</p>
+			<article className="mt-2 rounded-md border border-gray-300 bg-white  py-2  font-semibold text-blue-500 dark:border-none dark:bg-[#1D2226]">
+				<div className="grid gap-y-2 px-2 pb-2 text-xs">
+					<p className="hover:cursor-pointer hover:decoration-blue-500 hover:decoration-1">
+						Groups
+					</p>
 					<div className="flex justify-between">
-						<p>Events</p>
-
-						<AddRounded className="text-xl font-normal text-black" />
+						<p className="hover:cursor-pointer hover:decoration-blue-500 hover:decoration-1">
+							Events
+						</p>
+						<div>
+							<AddRounded className="text-xl font-normal text-black dark:text-gray-300" />
+						</div>
 					</div>
-					<p>Followed Hashtags</p>
+					<p className="-mt-1 hover:cursor-pointer">
+						Followed Hashtags
+					</p>
 				</div>
 
-				<div className="mt-5 pb-1 text-center text-sm text-gray-500">
+				<div className="pt-3 pb-1 text-center text-sm text-gray-500 dark:border-t dark:border-gray-700 dark:text-gray-300 dark:hover:text-white">
 					Discover More
 				</div>
 			</article>

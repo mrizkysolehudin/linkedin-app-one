@@ -4,7 +4,7 @@ import Post from "./Post";
 
 const Feed = () => {
 	return (
-		<div className="h-screen w-[44%]">
+		<div className="w-[44%]">
 			<section>
 				<InputStartPost />
 			</section>
