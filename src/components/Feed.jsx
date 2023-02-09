@@ -1,5 +1,6 @@
 import React from "react";
 import InputStartPost from "./InputStartPost";
+import Post from "./Post";
 
 const Feed = () => {
 	return (
@@ -8,7 +9,9 @@ const Feed = () => {
 				<InputStartPost />
 			</section>
 
-			<section>srticle</section>
+			<section className="-mt-1 pb-20">
+				<Post />
+			</section>
 		</div>
 	);
 };
