@@ -1,11 +1,11 @@
 import React from "react";
-import StartPost from "./StartPost";
+import InputStartPost from "./InputStartPost";
 
 const Feed = () => {
 	return (
 		<div className="h-screen w-[44%]">
 			<section>
-				<StartPost />
+				<InputStartPost />
 			</section>
 
 			<section>srticle</section>
