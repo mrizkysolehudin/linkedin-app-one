@@ -32,19 +32,19 @@ const Post = () => {
 						className="bg-orange-500"
 					/>
 
-					<div className="text-gray-700">
+					<div className="text-gray-700 dark:text-white/70 dark:hover:text-white/90">
 						<p className="text-sm">mrizkysolehudin11@gmail.com</p>
 						<p className="text-xs">4 days ago</p>
 					</div>
 				</div>
 
-				<div className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-200/80">
-					<MoreHoriz className="text-gray-600" />
+				<div className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-200/80 dark:hover:bg-gray-200/10">
+					<MoreHoriz className="text-gray-600 dark:text-gray-400" />
 				</div>
 			</section>
 
 			<section className="mt-2 ">
-				<p className="px-3">
+				<p className="px-3 dark:text-white/90">
 					{text.desc.length > 153
 						? text.desc.substring(0, 153) + "...see more"
 						: text.desc}
@@ -57,11 +57,11 @@ const Post = () => {
 			</section>
 
 			<section className="mx-2 mt-4 flex font-semibold text-gray-600">
-				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90">
+				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
 					<ThumbUpAltOutlined className="-scale-x-100" />
 					<p>Like</p>
 				</button>
-				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90">
+				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
 					<Delete className="-scale-x-100" />
 					<p>Delete Post</p>
 				</button>
