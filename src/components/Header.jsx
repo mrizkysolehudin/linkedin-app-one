@@ -73,27 +73,29 @@ const Header = () => {
 					<HeaderItem Icon={Avatar} title="Me" />
 					<HeaderItem Icon={AppsOutlinedIcon} title="Work" />
 
-					<button
-						onClick={() =>
-							setTheme(
-								resolvedTheme === "dark" ? "light" : "dark"
-							)
-						}
-						className={`relative flex w-[3.25rem] items-center rounded-2xl bg-gray-700 py-1 px-1 dark:bg-gray-600 ${
-							resolvedTheme === "dark"
-								? "justify-end"
-								: "justify-start"
-						}`}>
-						<span className="absolute left-0">🌜</span>
+					{mounted && (
+						<button
+							onClick={() =>
+								setTheme(
+									resolvedTheme === "dark" ? "light" : "dark"
+								)
+							}
+							className={`relative flex w-[3.25rem] items-center rounded-2xl bg-gray-700 py-1 px-1 dark:bg-gray-600 ${
+								resolvedTheme === "dark"
+									? "justify-end"
+									: "justify-start"
+							}`}>
+							<span className="absolute left-0">🌜</span>
 
-						<motion.div
-							layout
-							transition={spring}
-							className=" z-20 h-5 w-5 rounded-full bg-white"
-						/>
+							<motion.div
+								layout
+								transition={spring}
+								className=" z-20 h-5 w-5 rounded-full bg-white"
+							/>
 
-						<span className="absolute right-0.5">🌞</span>
-					</button>
+							<span className="absolute right-0.5">🌞</span>
+						</button>
+					)}
 				</section>
 			</div>
 		</header>
