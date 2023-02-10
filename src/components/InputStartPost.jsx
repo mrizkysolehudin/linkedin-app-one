@@ -9,7 +9,7 @@ import React from "react";
 
 const InputStartPost = () => {
 	return (
-		<div className="rounded-lg border border-gray-300 bg-white p-3">
+		<div className="rounded-lg border border-gray-300 bg-white p-3 dark:border-none dark:bg-[#1D2226]">
 			<section className="flex">
 				<Avatar
 					alt="Remy Sharp"
@@ -21,26 +21,34 @@ const InputStartPost = () => {
 				<input
 					type="text"
 					placeholder="Start a post"
-					className="ml-2 w-full cursor-pointer rounded-full border border-gray-400 px-3 placeholder:font-semibold placeholder:text-gray-800 "
+					className="ml-2 w-full cursor-pointer rounded-full border border-gray-400 px-3 placeholder:font-semibold placeholder:text-gray-800 dark:border-gray-500 dark:bg-[#1D2226] dark:placeholder:text-gray-300 dark:hover:placeholder:text-gray-100 "
 				/>
 			</section>
 
 			<section className="mt-3 flex justify-center gap-x-8 text-sm font-semibold">
-				<div className="flex cursor-pointer items-center gap-x-2">
+				<div className="group flex cursor-pointer items-center gap-x-2">
 					<PhotoSizeSelectActual className="text-blue-500" />
-					<p>Photo</p>
+					<p className="dark:opacity-70 dark:group-hover:opacity-90">
+						Photo
+					</p>
 				</div>
-				<div className="flex cursor-pointer items-center gap-x-2">
+				<div className="group flex cursor-pointer items-center gap-x-2">
 					<VideoCameraBack className="text-green-500" />
-					<p>Video</p>
+					<p className="dark:opacity-70 dark:group-hover:opacity-90">
+						Video
+					</p>
 				</div>
-				<div className="flex cursor-pointer items-center gap-x-2">
+				<div className="group flex cursor-pointer items-center gap-x-2">
 					<BusinessCenter className="text-blue-400" />
-					<p>Job</p>
+					<p className="dark:opacity-70 dark:group-hover:opacity-90">
+						Job
+					</p>
 				</div>
-				<div className="flex cursor-pointer items-center gap-x-2">
+				<div className="group flex cursor-pointer items-center gap-x-2">
 					<Article className="text-red-500" />
-					<p>Write Article</p>
+					<p className="dark:opacity-70 dark:group-hover:opacity-90">
+						Write Article
+					</p>
 				</div>
 			</section>
 		</div>

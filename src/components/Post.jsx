@@ -22,7 +22,7 @@ const Post = () => {
 	};
 
 	return (
-		<article className="mt-7 rounded-lg border border-gray-300 bg-white pt-3 pb-2">
+		<article className="mt-7 rounded-lg border border-gray-300 bg-white pt-3 pb-2 dark:border-none dark:bg-[#1D2226]">
 			<section className="flex cursor-pointer items-center justify-between px-3">
 				<div className="flex items-center gap-x-2">
 					<Avatar
