@@ -2,8 +2,20 @@ import Feed from "@/components/Feed";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import Head from "next/head";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+	const router = useRouter();
+
+	const { status } = useSession({
+		required: true,
+		onUnauthenticated() {
+			// The user is not authenticated, handle it here.
+			router.push("/home");
+		},
+	});
+
 	return (
 		<div className="min-h-screen bg-[#F3F2EF] dark:bg-black">
 			<Head>
