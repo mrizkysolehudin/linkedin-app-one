@@ -2,6 +2,7 @@ import { AddRounded, Bookmark } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import { signOut } from "next-auth/react";
 
 const SideBar = () => {
 	return (
@@ -16,6 +17,7 @@ const SideBar = () => {
 					/>
 
 					<Avatar
+						onClick={signOut}
 						alt="Remy Sharp"
 						src="/static/images/avatar/1.jpg"
 						sx={{ width: 56, height: 56 }}
