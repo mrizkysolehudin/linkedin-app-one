@@ -26,13 +26,18 @@ const home = ({ providers }) => {
 
 				<section className="flex items-center  divide-gray-300  sm:divide-x">
 					<div className="flex items-center gap-x-8 pr-4">
-						<HeaderItem Icon={ExploreIcon} title="Discover" />
-						<HeaderItem Icon={GroupIcon} title="People" />
+						<HeaderItem Icon={ExploreIcon} title="Discover" home />
+						<HeaderItem Icon={GroupIcon} title="People" home />
 						<HeaderItem
 							Icon={OndemandVideoSharpIcon}
 							title="Learning"
+							home
 						/>
-						<HeaderItem Icon={BusinessCenterIcon} title="Jobs" />
+						<HeaderItem
+							Icon={BusinessCenterIcon}
+							title="Jobs"
+							home
+						/>
 					</div>
 					{Object.values(providers).map((provider, index) => (
 						<div key={index}>
@@ -56,7 +61,7 @@ const home = ({ providers }) => {
 					professional community
 				</h1>
 
-				<div className="relative h-full">
+				<div className="relative h-full text-black">
 					<div className="z-10 mt-12 grid gap-5">
 						<button className="flex w-[29rem] items-center justify-between rounded-lg bg-white px-4 py-4 text-xl shadow hover:shadow-xl">
 							Search for a job

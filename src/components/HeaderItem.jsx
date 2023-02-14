@@ -1,12 +1,14 @@
 import React from "react";
 
-const HeaderItem = ({ title, Icon, className, active }) => {
+const HeaderItem = ({ title, Icon, className, active, home }) => {
 	return (
 		<div
-			className={`relative  flex cursor-pointer flex-col items-center transition duration-150 hover:text-black dark:hover:text-white ${
+			className={`relative  flex cursor-pointer flex-col items-center transition duration-150   ${
 				active
 					? "text-black dark:text-white"
-					: "text-gray-500 dark:text-gray-300"
+					: home
+					? "text-gray-500 hover:text-gray-900"
+					: "text-gray-500 hover:text-black dark:text-gray-300 dark:hover:text-white"
 			}`}>
 			<Icon className={className} />
 
