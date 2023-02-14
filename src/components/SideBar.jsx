@@ -2,9 +2,11 @@ import { AddRounded, Bookmark } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const SideBar = () => {
+	const { data: session } = useSession();
+
 	return (
 		<div className="w-[19%]">
 			<article className="overflow-hidden rounded-lg border border-gray-300 bg-white dark:border-none dark:bg-[#1D2226]">
@@ -19,7 +21,7 @@ const SideBar = () => {
 					<Avatar
 						onClick={signOut}
 						alt="Remy Sharp"
-						src="/static/images/avatar/1.jpg"
+						src={session?.user?.image}
 						sx={{ width: 56, height: 56 }}
 						className="top-5 border-[1.5px] border-gray-200 bg-orange-500 hover:cursor-pointer"
 					/>
@@ -27,10 +29,10 @@ const SideBar = () => {
 
 				<section className="mt-10 text-center">
 					<p className="font-medium hover:cursor-pointer hover:underline hover:decoration-blue-500 dark:font-normal dark:text-white/90">
-						Muchammad Rizky
+						{session?.user?.name.substring(0, 15)}
 					</p>
 					<p className="text-sm text-gray-500 dark:text-white/70">
-						mrizkysolehudin11@gmail.com
+						{session?.user?.email}
 					</p>
 				</section>
 
