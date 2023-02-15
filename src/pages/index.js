@@ -4,6 +4,7 @@ import SideBar from "@/components/SideBar";
 import Head from "next/head";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Modal from "@/components/Modal";
 
 export default function Home() {
 	const router = useRouter();
@@ -17,7 +18,7 @@ export default function Home() {
 	});
 
 	return (
-		<div className="min-h-screen bg-[#F3F2EF] dark:bg-black">
+		<div className="relative min-h-screen bg-[#F3F2EF] dark:bg-black">
 			<Head>
 				<title>LinkedIn App</title>
 				<meta
@@ -33,6 +34,7 @@ export default function Home() {
 
 			<Header />
 
+			<Modal />
 			<main className="mx-auto flex min-h-screen max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
 				<SideBar />
 				<Feed />

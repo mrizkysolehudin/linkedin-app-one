@@ -20,7 +20,7 @@ const SideBar = () => {
 
 					<Avatar
 						onClick={signOut}
-						alt="Remy Sharp"
+						alt="profile-photos"
 						src={session?.user?.image}
 						sx={{ width: 56, height: 56 }}
 						className="top-5 border-[1.5px] border-gray-200 bg-orange-500 hover:cursor-pointer"
