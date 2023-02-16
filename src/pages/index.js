@@ -5,9 +5,14 @@ import Head from "next/head";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Modal from "@/components/Modal";
+import { useRecoilState } from "recoil";
+import { modalState, modalTypeState } from "@/atoms/modalAtom";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
 	const router = useRouter();
+	const [modalOpen, setModalOpen] = useRecoilState(modalState);
+	const [modalType, setModalType] = useRecoilState(modalTypeState);
 
 	const { status } = useSession({
 		required: true,
@@ -34,7 +39,15 @@ export default function Home() {
 
 			<Header />
 
-			<Modal />
+			<AnimatePresence>
+				{modalOpen && (
+					<Modal
+						type={modalType}
+						handleClose={() => setModalOpen(false)}
+					/>
+				)}
+			</AnimatePresence>
+
 			<main className="mx-auto flex min-h-screen max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
 				<SideBar />
 				<Feed />
