@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 
 const Form = () => {
-	const [inputPost, setInputPost] = useState("");
+	const [input, setInput] = useState("");
 	const [photoUrl, setPhotoUrl] = useState("");
 
 	const { data: session } = useSession();
@@ -18,11 +18,11 @@ const Form = () => {
 		const response = await fetch("/api/posts", {
 			method: "POST",
 			body: JSON.stringify({
-				inputPost,
+				input,
 				photoUrl,
 				userName: session.user.name,
 				email: session.user.email,
-				userImage: session.user.image,
+				userImg: session.user.image,
 				createdAt: new Date().toString(),
 			}),
 			headers: {
@@ -39,8 +39,8 @@ const Form = () => {
 	return (
 		<form>
 			<textarea
-				value={inputPost}
-				onChange={(e) => setInputPost(e.target.value)}
+				value={input}
+				onChange={(e) => setInput(e.target.value)}
 				rows="4"
 				placeholder="What do you want to talk about?"
 				className="mt-1 w-full p-2 outline-none disabled:bg-white/75 disabled:text-black/40 dark:bg-[#1D2226] dark:placeholder:text-white/60"></textarea>
@@ -55,7 +55,7 @@ const Form = () => {
 			<button
 				onClick={uploadPost}
 				type="submit"
-				disabled={!inputPost.trim() && !photoUrl.trim()}
+				disabled={!input.trim() && !photoUrl.trim()}
 				className="ml-2 rounded-3xl bg-blue-400 px-4 pb-1.5 pt-1 font-semibold text-white hover:bg-blue-500 disabled:cursor-not-allowed disabled:bg-white/40  disabled:text-black/40 dark:disabled:bg-white/60  dark:disabled:text-black/50">
 				Post
 			</button>

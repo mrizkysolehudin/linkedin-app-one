@@ -8,8 +8,9 @@ import Modal from "@/components/Modal";
 import { useRecoilState } from "recoil";
 import { modalState, modalTypeState } from "@/atoms/modalAtom";
 import { AnimatePresence } from "framer-motion";
+import { connectToDatabase } from "@/utils/mongodb";
 
-export default function Home() {
+export default function Home({ posts }) {
 	const router = useRouter();
 	const [modalOpen, setModalOpen] = useRecoilState(modalState);
 	const [modalType, setModalType] = useRecoilState(modalTypeState);
@@ -50,9 +51,35 @@ export default function Home() {
 
 			<main className="mx-auto flex min-h-screen max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
 				<SideBar />
-				<Feed />
+				<Feed posts={posts} />
 				<div className="h-screen w-[29%] bg-red-300"></div>
 			</main>
 		</div>
 	);
+}
+
+export async function getServerSideProps(context) {
+	// get posts on SSR
+	const { db } = await connectToDatabase();
+	const posts = await db
+		.collection("posts")
+		.find()
+		.sort({ timestamp: -1 })
+		.toArray();
+
+	console.log(posts);
+
+	return {
+		props: {
+			posts: posts.map((post) => ({
+				_id: post._id.toString(),
+				input: post.input,
+				photoUrl: post.photoUrl,
+				userName: post.userName,
+				email: post.email,
+				userImg: post.userImg,
+				createdAt: post.createdAt,
+			})),
+		},
+	};
 }
