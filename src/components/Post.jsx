@@ -1,20 +1,39 @@
+import { handlePostState } from "@/atoms/postAtom";
 import {
 	Delete,
 	MoreHoriz,
 	ThumbUpAltOutlined,
 	ThumbUpAltRounded,
+	ReplyRounded,
 } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
+import { useSession } from "next-auth/react";
 import React from "react";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
 import TimeAgo from "timeago-react";
 
 const Post = ({ post }) => {
+	const { data: session } = useSession();
+
+	const [handlePost, setHandlePost] = useRecoilState(handlePostState);
+
 	const [showInput, setShowInput] = useState(false);
 	const [liked, setLiked] = useState(false);
 
 	const truncate = (text) =>
 		text.length > 153 ? text.substring(0, 153) + "...see more" : text;
+
+	const deletePost = async () => {
+		await fetch(`/api/posts/${post._id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		setHandlePost(true);
+	};
 
 	return (
 		<article className="mt-7 rounded-lg border border-gray-300 bg-white pt-3 pb-2 dark:border-none dark:bg-[#1D2226]">
@@ -58,7 +77,7 @@ const Post = ({ post }) => {
 					</p>
 				)}
 				<img
-					src={post?.photoUrl || null}
+					src={post?.photoUrl}
 					alt={post.photoUrl}
 					className="w-full cursor-pointer pt-2"
 				/>
@@ -80,10 +99,20 @@ const Post = ({ post }) => {
 						<p>Like</p>
 					</button>
 				)}
-				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
-					<Delete className="-scale-x-100" />
-					<p>Delete Post</p>
-				</button>
+
+				{session?.user?.email === post?.email ? (
+					<button
+						onClick={deletePost}
+						className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 focus:text-red-400 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
+						<Delete className="-scale-x-100" />
+						<p>Delete Post</p>
+					</button>
+				) : (
+					<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 focus:text-blue-500  dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
+						<ReplyRounded className="-scale-x-100" />
+						<p>Share</p>
+					</button>
+				)}
 			</section>
 		</article>
 	);
