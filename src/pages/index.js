@@ -67,8 +67,6 @@ export async function getServerSideProps(context) {
 		.sort({ timestamp: -1 })
 		.toArray();
 
-	console.log(posts);
-
 	return {
 		props: {
 			posts: posts.map((post) => ({

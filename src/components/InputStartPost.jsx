@@ -9,17 +9,20 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { motion } from "framer-motion";
+import { useSession } from "next-auth/react";
 
 const InputStartPost = () => {
 	const [modalOpen, setModalOpen] = useRecoilState(modalState);
 	const [modalType, setModalType] = useRecoilState(modalTypeState);
 
+	const { data: session } = useSession();
+
 	return (
 		<div className="rounded-lg border border-gray-300 bg-white p-3 dark:border-none dark:bg-[#1D2226]">
 			<section className="flex">
 				<Avatar
-					alt="Remy Sharp"
-					src="/static/images/avatar/1.jpg"
+					alt={session?.user.name}
+					src={session?.user.image}
 					sx={{ width: 43, height: 43 }}
 					className="cursor-pointer bg-orange-500"
 				/>
