@@ -1,4 +1,9 @@
-import { Delete, MoreHoriz, ThumbUpAltOutlined } from "@mui/icons-material";
+import {
+	Delete,
+	MoreHoriz,
+	ThumbUpAltOutlined,
+	ThumbUpAltRounded,
+} from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import React from "react";
 import { useState } from "react";
@@ -6,6 +11,7 @@ import TimeAgo from "timeago-react";
 
 const Post = ({ post }) => {
 	const [showInput, setShowInput] = useState(false);
+	const [liked, setLiked] = useState(false);
 
 	const truncate = (text) =>
 		text.length > 153 ? text.substring(0, 153) + "...see more" : text;
@@ -59,10 +65,21 @@ const Post = ({ post }) => {
 			</section>
 
 			<section className="mx-2 mt-4 flex font-semibold text-gray-600">
-				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
-					<ThumbUpAltOutlined className="-scale-x-100" />
-					<p>Like</p>
-				</button>
+				{liked ? (
+					<button
+						onClick={() => setLiked(!liked)}
+						className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded text-blue-500 hover:bg-gray-200/90 dark:hover:bg-black/30 dark:hover:text-white/90">
+						<ThumbUpAltRounded className="-scale-x-100" />
+						<p>Like</p>
+					</button>
+				) : (
+					<button
+						onClick={() => setLiked(!liked)}
+						className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
+						<ThumbUpAltOutlined className="-scale-x-100" />
+						<p>Like</p>
+					</button>
+				)}
 				<button className=" flex h-11 w-1/2 items-center justify-center gap-x-2 rounded hover:bg-gray-200/90 dark:text-white/70 dark:hover:bg-black/30 dark:hover:text-white/90">
 					<Delete className="-scale-x-100" />
 					<p>Delete Post</p>
