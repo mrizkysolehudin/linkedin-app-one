@@ -24,7 +24,7 @@ export default function Home({ posts }) {
 	});
 
 	return (
-		<div className="relative min-h-screen bg-[#F3F2EF] dark:bg-black">
+		<div className=" h-screen overflow-y-scroll bg-[#F3F2EF] dark:bg-black">
 			<Head>
 				<title>LinkedIn App</title>
 				<meta
@@ -40,19 +40,19 @@ export default function Home({ posts }) {
 
 			<Header />
 
-			<AnimatePresence>
-				{modalOpen && (
-					<Modal
-						type={modalType}
-						handleClose={() => setModalOpen(false)}
-					/>
-				)}
-			</AnimatePresence>
-
-			<main className="mx-auto flex min-h-screen max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
+			<main className="mx-auto flex max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
 				<SideBar />
 				<Feed posts={posts} />
 				<div className="h-screen w-[29%] bg-red-300"></div>
+
+				<AnimatePresence>
+					{modalOpen && (
+						<Modal
+							type={modalType}
+							handleClose={() => setModalOpen(false)}
+						/>
+					)}
+				</AnimatePresence>
 			</main>
 		</div>
 	);

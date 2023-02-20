@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Avatar } from "@mui/material";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import Form from "./Form";
+import Post from "./Post";
+import { useRecoilValue } from "recoil";
+import { getPostsState } from "@/atoms/postAtom";
 
 const dropIn = {
 	hidden: {
@@ -26,7 +29,32 @@ const dropIn = {
 	},
 };
 
+const gifYouUp = {
+	hidden: {
+		opacity: 0,
+		scale: 0,
+	},
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			duration: 0.2,
+			ease: "easeIn",
+		},
+	},
+	exit: {
+		opacity: 0,
+		scale: 0,
+		transition: {
+			duration: 0.15,
+			ease: "easeOut",
+		},
+	},
+};
+
 const Modal = ({ type, handleClose }) => {
+	const post = useRecoilValue(getPostsState);
+
 	return (
 		<Backdrop onClick={handleClose}>
 			{type === "dropIn" && (
@@ -56,6 +84,24 @@ const Modal = ({ type, handleClose }) => {
 					</div>
 
 					<Form />
+				</motion.div>
+			)}
+
+			{type === "gifYouUp" && (
+				<motion.div
+					onClick={(e) => e.stopPropagation()}
+					className="fixed left-[3.6rem] top-14 z-[9999] flex  w-full max-w-6xl  rounded-xl  bg-white  dark:bg-[#1D2226]"
+					variants={gifYouUp}
+					initial="hidden"
+					animate="visible"
+					exit="exit">
+					<img
+						src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/09/nusa-penida.jpg"
+						alt=""
+						className="w-[70%] rounded-l-xl object-cover"
+					/>
+
+					<Post post={post} modalPost />
 				</motion.div>
 			)}
 		</Backdrop>
