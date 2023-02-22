@@ -70,20 +70,20 @@ const SideBar = () => {
 				</section>
 			</article>
 
-			<article className="sticky top-20 left-0 mt-2 rounded-md border border-gray-300 bg-white  py-2  font-semibold text-blue-500 dark:border-none dark:bg-[#1D2226]">
-				<div className="grid gap-y-2 px-2 pb-2 text-xs">
-					<p className="cursor-pointer  hover:underline hover:decoration-blue-500 hover:decoration-1">
+			<article className="sticky top-[89px] left-0 mt-2 rounded-md border border-gray-300 bg-white  py-2  font-semibold text-blue-500 dark:border-none dark:bg-[#1D2226]">
+				<div className="grid gap-y-2 px-2 pb-2 text-sm">
+					<p className="cursor-pointer  hover:underline hover:decoration-blue-400 hover:decoration-1">
 						Groups
 					</p>
 					<div className="flex justify-between">
-						<p className="cursor-pointer  hover:underline hover:decoration-blue-500 hover:decoration-1">
+						<p className="cursor-pointer  hover:underline hover:decoration-blue-400 hover:decoration-1">
 							Events
 						</p>
 						<div>
 							<AddRounded className="text-xl font-normal text-black dark:text-gray-300" />
 						</div>
 					</div>
-					<p className="-mt-1 cursor-pointer hover:underline hover:decoration-blue-500 hover:decoration-1">
+					<p className="-mt-1 cursor-pointer hover:underline hover:decoration-blue-400 hover:decoration-1">
 						Followed Hashtags
 					</p>
 				</div>

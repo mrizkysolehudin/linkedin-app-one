@@ -9,8 +9,9 @@ import { useRecoilState } from "recoil";
 import { modalState, modalTypeState } from "@/atoms/modalAtom";
 import { AnimatePresence } from "framer-motion";
 import { connectToDatabase } from "@/utils/mongodb";
+import Widgets from "@/components/Widgets";
 
-export default function Home({ posts }) {
+export default function Home({ posts, articles }) {
 	const router = useRouter();
 	const [modalOpen, setModalOpen] = useRecoilState(modalState);
 	const [modalType, setModalType] = useRecoilState(modalTypeState);
@@ -43,8 +44,8 @@ export default function Home({ posts }) {
 			<main className="mx-auto flex max-w-6xl gap-x-6 pt-24 pl-4 dark:bg-black">
 				<SideBar />
 				<Feed posts={posts} />
-				<div className="h-screen w-[29%] bg-red-300"></div>
 
+				<Widgets articles={articles} />
 				<AnimatePresence>
 					{modalOpen && (
 						<Modal
@@ -67,6 +68,11 @@ export async function getServerSideProps(context) {
 		.sort({ timestamp: -1 })
 		.toArray();
 
+	// get articles
+	const results = await fetch(
+		`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
+	).then((res) => res.json());
+
 	return {
 		props: {
 			posts: posts.map((post) => ({
@@ -78,6 +84,7 @@ export async function getServerSideProps(context) {
 				userImg: post.userImg,
 				createdAt: post.createdAt,
 			})),
+			articles: results.articles,
 		},
 	};
 }
