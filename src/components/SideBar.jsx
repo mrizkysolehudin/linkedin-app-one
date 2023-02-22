@@ -37,9 +37,9 @@ const SideBar = () => {
 				</section>
 
 				<section
-					className="mx-3 mt-7 text-sm font-semibold text-gray-800 dark:opacity-70 dark:hover:opacity-90
+					className="mx-3 mt-7 cursor-pointer text-sm font-semibold text-gray-800 dark:opacity-70 dark:hover:opacity-90
 ">
-					<div className="  flex justify-between  ">
+					<div className="  flex   justify-between">
 						<p className="dark:text-white ">
 							Who viewed your profile
 						</p>
@@ -52,7 +52,7 @@ const SideBar = () => {
 					</div>
 				</section>
 
-				<section className="mx-3 mt-6 opacity-70 hover:opacity-90">
+				<section className="mx-3 mt-6 cursor-pointer opacity-70 hover:opacity-90">
 					<p className="text-xs ">
 						Access exclusive tools & insights
 					</p>
@@ -62,7 +62,7 @@ const SideBar = () => {
 					</div>
 				</section>
 
-				<section className="ml-2 mt-6 mb-3 flex gap-x-1 text-sm font-semibold opacity-70 hover:opacity-90">
+				<section className="ml-2 mt-6 mb-3 flex cursor-pointer gap-x-1 text-sm font-semibold opacity-70 hover:opacity-90">
 					<div>
 						<Bookmark />
 					</div>
@@ -70,25 +70,25 @@ const SideBar = () => {
 				</section>
 			</article>
 
-			<article className="mt-2 rounded-md border border-gray-300 bg-white  py-2  font-semibold text-blue-500 dark:border-none dark:bg-[#1D2226]">
+			<article className="sticky top-20 left-0 mt-2 rounded-md border border-gray-300 bg-white  py-2  font-semibold text-blue-500 dark:border-none dark:bg-[#1D2226]">
 				<div className="grid gap-y-2 px-2 pb-2 text-xs">
-					<p className="hover:cursor-pointer hover:decoration-blue-500 hover:decoration-1">
+					<p className="cursor-pointer  hover:underline hover:decoration-blue-500 hover:decoration-1">
 						Groups
 					</p>
 					<div className="flex justify-between">
-						<p className="hover:cursor-pointer hover:decoration-blue-500 hover:decoration-1">
+						<p className="cursor-pointer  hover:underline hover:decoration-blue-500 hover:decoration-1">
 							Events
 						</p>
 						<div>
 							<AddRounded className="text-xl font-normal text-black dark:text-gray-300" />
 						</div>
 					</div>
-					<p className="-mt-1 hover:cursor-pointer">
+					<p className="-mt-1 cursor-pointer hover:underline hover:decoration-blue-500 hover:decoration-1">
 						Followed Hashtags
 					</p>
 				</div>
 
-				<div className="pt-3 pb-1 text-center text-sm text-gray-500 dark:border-t dark:border-gray-700 dark:text-gray-300 dark:hover:text-white">
+				<div className="cursor-pointer pt-3 pb-1 text-center text-sm text-gray-500/80 hover:text-gray-500 dark:border-t dark:border-gray-700 dark:text-gray-300 dark:hover:text-white">
 					Discover More
 				</div>
 			</article>

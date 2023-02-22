@@ -28,6 +28,8 @@ const InputStartPost = () => {
 				/>
 
 				<motion.button
+					whileHover={{ scale: 1.02 }}
+					whileTap={{ scale: 0.99 }}
 					onClick={() => {
 						setModalOpen(true);
 						setModalType("dropIn");
