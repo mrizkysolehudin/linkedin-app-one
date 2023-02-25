@@ -4,8 +4,6 @@ import React from "react";
 import TimeAgo from "timeago-react";
 
 const Widgets = ({ articles }) => {
-	console.log(articles);
-
 	return (
 		<div className=" w-[29%]">
 			<section className="h-min rounded-lg border border-gray-300 bg-white pt-2 pb-2 dark:border-none dark:bg-[#1D2226]  ">
