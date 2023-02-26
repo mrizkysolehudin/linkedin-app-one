@@ -108,14 +108,14 @@ const home = ({ providers }) => {
 				</section>
 			</header>
 
-			<main className="mx-auto mt-12 max-w-xs sm:max-w-6xl">
+			<main className="mx-auto mt-12 max-w-xs sm:max-w-lg md:mt-28 xl:mt-12 xl:max-w-6xl ">
 				<h1 className="text-[1.75rem] font-bold text-amber-800/80 sm:text-5xl  sm:font-normal">
 					Welcome to your <br />
 					professional community
 				</h1>
 
 				<div className="relative h-full text-black">
-					<div className="z-10 mt-12 grid  gap-5 sm:text-xl">
+					<div className="z-10 mt-12 grid gap-5  sm:text-xl md:mt-20 xl:mt-12">
 						<button className="flex w-[95%]  items-center justify-between rounded-lg bg-white px-4 py-4  shadow hover:shadow-xl sm:w-[29rem]">
 							Search for a job
 							<ArrowForwardIosRoundedIcon />
@@ -130,7 +130,7 @@ const home = ({ providers }) => {
 						</button>
 					</div>
 
-					<div className="-z-1 absolute -top-40 right-0 hidden h-[220%] w-[50%] sm:block">
+					<div className="-z-1 absolute -top-40 right-0 hidden h-[220%] w-[50%] xl:block">
 						<Image src="https://rb.gy/vkzpzt" alt="img-home" fill />
 					</div>
 				</div>
