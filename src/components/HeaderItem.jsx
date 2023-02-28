@@ -1,9 +1,11 @@
 import React from "react";
 
-const HeaderItem = ({ title, Icon, className, active, home }) => {
+const HeaderItem = ({ title, Icon, className, active, home, smallScreen }) => {
 	return (
 		<div
-			className={`relative  flex cursor-pointer flex-col items-center transition duration-150   ${
+			className={`relative  flex cursor-pointer ${
+				smallScreen ? "gap-x-3" : "flex-col"
+			} items-center transition duration-150   ${
 				active
 					? "text-black dark:text-white"
 					: home
@@ -12,7 +14,7 @@ const HeaderItem = ({ title, Icon, className, active, home }) => {
 			}`}>
 			<Icon className={className} />
 
-			<div className={`text-sm`}>{title}</div>
+			<div className={`text-sm `}>{title}</div>
 
 			{active && (
 				<span className="mt-1 hidden h-0.5 w-[calc(100%+10px)] bg-black dark:bg-white lg:inline-flex" />

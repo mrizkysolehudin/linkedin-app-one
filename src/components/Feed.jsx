@@ -31,7 +31,7 @@ const Feed = ({ posts }) => {
 	}, [handlePost]);
 
 	return (
-		<div className="w-[44%]">
+		<div className="sm:w-2/3 lg:w-[44%]">
 			<section>
 				<InputStartPost />
 			</section>

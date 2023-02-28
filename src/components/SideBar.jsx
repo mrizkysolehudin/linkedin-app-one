@@ -8,7 +8,7 @@ const SideBar = () => {
 	const { data: session } = useSession();
 
 	return (
-		<div className="w-[19%]">
+		<div className="hidden sm:block lg:w-[19%]">
 			<article className="overflow-hidden rounded-lg border border-gray-300 bg-white dark:border-none dark:bg-[#1D2226]">
 				<section className="relative left-0 top-0  z-10 flex h-14 w-full justify-center">
 					<Image

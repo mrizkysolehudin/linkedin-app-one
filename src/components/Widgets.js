@@ -5,7 +5,7 @@ import TimeAgo from "timeago-react";
 
 const Widgets = ({ articles }) => {
 	return (
-		<div className=" w-[29%]">
+		<div className=" hidden w-[29%] lg:block">
 			<section className="h-min rounded-lg border border-gray-300 bg-white pt-2 pb-2 dark:border-none dark:bg-[#1D2226]  ">
 				<div className="mb-1 flex justify-between px-3 pb-1 font-bold">
 					<h5>LinkedIn News</h5>
