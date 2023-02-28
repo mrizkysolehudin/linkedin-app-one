@@ -40,7 +40,7 @@ const InputStartPost = () => {
 				</motion.button>
 			</section>
 
-			<section className="mt-3 flex justify-center gap-x-8 text-sm font-semibold">
+			<section className="mt-3 flex justify-center gap-x-4 text-sm font-semibold sm:gap-x-8">
 				<div className="group flex cursor-pointer items-center gap-x-2">
 					<PhotoSizeSelectActual className="text-blue-500" />
 					<p className="dark:opacity-70 dark:group-hover:opacity-90">

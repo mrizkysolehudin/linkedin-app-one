@@ -50,7 +50,7 @@ const Form = () => {
 				onChange={(e) => setPhotoUrl(e.target.value)}
 				type="text"
 				placeholder="Add a photo URL (optional)"
-				className="w-[85%] py-1 px-2  outline-none dark:bg-[#1D2226] dark:placeholder:text-white/60"
+				className="w-[75%] py-1 px-2 outline-none  dark:bg-[#1D2226] dark:placeholder:text-white/60 sm:w-[85%]"
 			/>
 			<button
 				onClick={uploadPost}

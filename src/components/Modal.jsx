@@ -55,12 +55,14 @@ const gifYouUp = {
 const Modal = ({ type, handleClose }) => {
 	const post = useRecoilValue(getPostsState);
 
+	console.log(post);
+
 	return (
 		<Backdrop onClick={handleClose}>
 			{type === "dropIn" && (
 				<motion.div
 					onClick={(e) => e.stopPropagation()}
-					className="absolute top-28 left-[28%] z-[9999] w-5/12 rounded-lg bg-white px-4 py-3 dark:bg-[#1D2226]"
+					className="absolute top-28 left-4 z-[9999] w-11/12 rounded-lg bg-white px-4 py-3 dark:bg-[#1D2226] sm:left-[28%] sm:w-5/12"
 					variants={dropIn}
 					initial="hidden"
 					animate="visible"
@@ -75,12 +77,12 @@ const Modal = ({ type, handleClose }) => {
 					</div>
 					<div className="mt-5 flex items-center gap-x-2">
 						<Avatar
-							src="/static/images/avatar/1.jpg"
-							alt="Remy Sharp"
+							src={post.userImg}
+							alt={post.userName}
 							sx={{ width: 46, height: 46 }}
 							className=" bg-orange-500 hover:cursor-pointer"
 						/>
-						<p>Muchammad Rizky Solehudin</p>
+						<p>{post.userName}</p>
 					</div>
 
 					<Form />
@@ -88,21 +90,43 @@ const Modal = ({ type, handleClose }) => {
 			)}
 
 			{type === "gifYouUp" && (
-				<motion.div
-					onClick={(e) => e.stopPropagation()}
-					className="fixed left-[3.6rem] top-14 z-[9999] flex  w-full max-w-6xl  rounded-xl  bg-white  dark:bg-[#1D2226]"
-					variants={gifYouUp}
-					initial="hidden"
-					animate="visible"
-					exit="exit">
-					<img
-						src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/09/nusa-penida.jpg"
-						alt=""
-						className="w-[70%] rounded-l-xl object-cover"
-					/>
+				<>
+					<motion.div
+						onClick={(e) => e.stopPropagation()}
+						className="fixed left-[3.6rem] top-14 z-[9999] hidden w-full  max-w-6xl rounded-xl  bg-white  dark:bg-[#1D2226]  sm:flex"
+						variants={gifYouUp}
+						initial="hidden"
+						animate="visible"
+						exit="exit">
+						<img
+							src={post.photoUrl}
+							alt=""
+							className="w-[70%] rounded-l-xl object-cover"
+						/>
 
-					<Post post={post} modalPost />
-				</motion.div>
+						<Post post={post} modalPost />
+					</motion.div>
+
+					{/* mobile screen */}
+					<motion.div
+						onClick={(e) => e.stopPropagation()}
+						className="fixed left-[3.6rem] top-48 z-[9998]  w-full  max-w-6xl rounded-xl  bg-transparent  sm:hidden"
+						variants={gifYouUp}
+						initial="hidden"
+						animate="visible"
+						exit="exit">
+						<div
+							onClick={handleClose}
+							className="absolute -top-3 right-[100px] flex rounded-full border-2 border-white ">
+							<CloseRoundedIcon className="h-4 w-4" />
+						</div>
+						<img
+							src={post.photoUrl}
+							alt=""
+							className="w-[70%] rounded-md object-cover"
+						/>
+					</motion.div>
+				</>
 			)}
 		</Backdrop>
 	);

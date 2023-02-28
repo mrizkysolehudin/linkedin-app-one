@@ -13,6 +13,7 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { Menu } from "@mui/icons-material";
 import Backdrop from "./Backdrop";
+import { useSession } from "next-auth/react";
 
 const Header = () => {
 	const [mounted, setMounted] = useState(false);
@@ -86,7 +87,7 @@ const Header = () => {
 							Icon={NotificationsIcon}
 							title="Notifications"
 						/>
-						<HeaderItem Icon={Avatar} title="Me" />
+						<HeaderItem Icon={Avatar} title="Me" avatar />
 						<HeaderItem Icon={AppsOutlinedIcon} title="Work" />
 
 						{mounted && (
@@ -124,7 +125,7 @@ const Header = () => {
 					<div className="flex justify-end">
 						<div
 							onClick={(e) => e.stopPropagation()}
-							className="h-screen w-1/2 bg-blue-300 dark:bg-[#1D2226] ">
+							className="h-screen w-1/2 bg-blue-500 dark:bg-[#1D2226] ">
 							<div className="mx-auto  w-1/2">
 								<ul className=" mt-12 -ml-4 flex flex-col gap-y-2 font-semibold text-gray-100 dark:text-gray-300">
 									<li>Home</li>
@@ -167,6 +168,7 @@ const Header = () => {
 										Icon={Avatar}
 										title="Me"
 										smallScreen
+										avatar
 									/>
 								</ul>
 							</div>
