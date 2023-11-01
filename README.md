@@ -6,7 +6,6 @@
 
 This web application is a replica of the LinkedIn platform. In this web application, users can create and delete posts, as well as view posts created by other accounts. The application offers both light and dark mode features, modal pop-ups, and next-level authentication for login and logout.
 
-
 <br />
 
 ## Built with
@@ -44,6 +43,8 @@ This web application is a replica of the LinkedIn platform. In this web applicat
 ## Environment Variables
 
 ```bash
+NEXTAUTH_URL=
+
 MONGODB_URI=
 MONGODB_DB=
 JWT_SECRET=
@@ -82,13 +83,9 @@ Start the project
 
 ## Screenshots
 
-
-
 ## Author
 
 💻 [Muchammad Rizky Solehudin](https://github.com/mrizkysolehudin)
-
-
 
 <br />
 

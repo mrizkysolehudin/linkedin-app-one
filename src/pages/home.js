@@ -56,21 +56,19 @@ const home = ({ providers }) => {
 									<li className="mt-3">Jobs</li>
 								</ul>
 
-								{Object.values(providers).map(
-									(provider, index) => (
-										<div key={index}>
-											<button
-												onClick={() =>
-													signIn(provider.id, {
-														callbackUrl: "/",
-													})
-												}
-												className="mt-3">
-												Sign In
-											</button>
-										</div>
-									)
-								)}
+								{Object.values(providers).map((provider, index) => (
+									<div key={index}>
+										<button
+											onClick={() =>
+												signIn(provider.id, {
+													callbackUrl: "/",
+												})
+											}
+											className="mt-3">
+											Sign In
+										</button>
+									</div>
+								))}
 							</div>
 						</section>
 					</div>
@@ -80,16 +78,8 @@ const home = ({ providers }) => {
 					<div className=" flex items-center gap-x-8 pr-4">
 						<HeaderItem Icon={ExploreIcon} title="Discover" home />
 						<HeaderItem Icon={GroupIcon} title="People" home />
-						<HeaderItem
-							Icon={OndemandVideoSharpIcon}
-							title="Learning"
-							home
-						/>
-						<HeaderItem
-							Icon={BusinessCenterIcon}
-							title="Jobs"
-							home
-						/>
+						<HeaderItem Icon={OndemandVideoSharpIcon} title="Learning" home />
+						<HeaderItem Icon={BusinessCenterIcon} title="Jobs" home />
 					</div>
 
 					{Object.values(providers).map((provider, index) => (
