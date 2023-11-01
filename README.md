@@ -1,38 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+ <img height="150" width="250" src="https://rb.gy/vtbzlp"  />
+</div>
 
-## Getting Started
+# LinkedIn Web Application
 
-First, run the development server:
+This web application is a replica of the LinkedIn platform. In this web application, users can create and delete posts, as well as view posts created by other accounts. The application offers both light and dark mode features, modal pop-ups, and next-level authentication for login and logout.
+
+
+<br />
+
+## Built with
+
+- Next JS
+- Material UI
+- Recoil
+- MongoDB
+
+## Package dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+"next": "13.1.6",
+"recoil": "^0.7.6",
+"@mui/material": "^5.11.7",
+"mongodb": "^4.14.0",
+
+"next-auth": "^4.19.2",
+"@next-auth/mongodb-adapter": "^1.1.1",
+"framer-motion": "^9.0.1",
+"next-themes": "^0.2.1",
+"timeago-react": "^3.0.5",
+"clsx": "^1.2.1",
+
+"@mui/icons-material": "^5.11.0",
+"@emotion/react": "^11.10.5",
+"@emotion/styled": "^11.10.5",
+"@next/font": "13.1.6",
+"eslint": "8.33.0",
+"eslint-config-next": "13.1.6",
+"react": "18.2.0",
+"react-dom": "18.2.0"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+MONGODB_URI=
+MONGODB_DB=
+JWT_SECRET=
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+NEWS_API_KEY=
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+Clone the project
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  git clone https://github.com/mrizkysolehudin/linkedin-app-one my-project
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Go to the project directory
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+  cd my-project
+```
 
-## Deploy on Vercel
+Install dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+  npm install
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Start the project
+
+```bash
+  npm run dev
+```
+
+## Screenshots
+
+
+
+## Author
+
+💻 [Muchammad Rizky Solehudin](https://github.com/mrizkysolehudin)
+
+
+
+<br />
+
+## Related Project
+
+⚡[`Live Demo`](https://netflix-web-application.vercel.app/)⚡
