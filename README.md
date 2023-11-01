@@ -83,6 +83,18 @@ Start the project
 
 ## Screenshots
 
+| Home Page Before Login                                                                                                                      | Home Page After Login (Light Mode)                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Home Page After Login (Light Mode)](https://github.com/mrizkysolehudin/linkedin-app-one/blob/main/public/assets/ss/home-before-login.png) | ![Home Page After Login (Light Mode)](<https://github.com/mrizkysolehudin/linkedin-app-one/blob/main/public/assets/ss/home-after-login-(ligth-mode).png>) |
+
+| Home Page After Login (Dark Mode)                                                                                                                       | Input Post Modal                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| ![Home Page After Login (Dark Mode)](<https://github.com/mrizkysolehudin/linkedin-app-one/blob/main/public/assets/ss/home-after-login-(dark-mode).png>) | ![Input Post Modal](https://github.com/mrizkysolehudin/linkedin-app-one/blob/main/public/assets/ss/input-post-modal.png) |
+
+| Post Modal                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------ |
+| ![Post Modal](https://github.com/mrizkysolehudin/linkedin-app-one/blob/main/public/assets/ss/post-modal.png) |
+
 ## Author
 
 💻 [Muchammad Rizky Solehudin](https://github.com/mrizkysolehudin)
