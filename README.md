@@ -103,4 +103,4 @@ Start the project
 
 ## Related Project
 
-⚡[`Live Demo`](https://netflix-web-application.vercel.app/)⚡
+⚡[`Live Demo`](https://linkedin-app.vercel.app/)⚡
